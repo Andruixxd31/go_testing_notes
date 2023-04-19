@@ -1,7 +1,10 @@
 package yamltohtml_test
 
 import (
+	"fmt"
+	"os"
 	"testing"
+
 	"github.com/andruixxd31/go-testing-bible/yamltohtml"
 )
 
@@ -9,6 +12,13 @@ type TestCase struct {
 	desc     string
 	path     string
 	expected string
+}
+
+func TestMain(m *testing.M){
+    fmt.Println("Running tests of yamltohtml")
+    ret := m.Run()
+    fmt.Println("Tests Executed")
+    os.Exit(ret)
 }
 
 func TestYamlToHTML(t *testing.T) {
